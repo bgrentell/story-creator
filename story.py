@@ -36,12 +36,38 @@ def do_story(current_passage):
     # Gets the passage from the global passages list, displays the passage, then returns the next selected passage from the user.
     passage = passages[0][current_passage]
     print_passage(passage["passage"])
-    exit(0)
+    return get_option(passage["options"])
 
 def print_passage(passage):
     # Prints the given passage
     print(passage)
     print()
+    
+def get_option(options):
+    # Iterate through list of options, enumerate them, 
+    # then ask for the selection from the user.  
+    # Each option is the next passage to go to.
+    i = 0
+    optionsavail = []
+    for option in options: # Enumerate and print each option
+        i = i + 1
+        print(f"{i}: {options[option]}")
+        optionsavail.append(option)
+    
+    optionnumber = get_option_number(len(optionsavail))
+    
+    return optionsavail[optionnumber - 1] # Return the option name
+
+def get_option_number(max_option):
+    # Gets the option number from the user bounded by max_option and 0
+    optionnumber = 0
+    while optionnumber < 1 or optionnumber > max_option:
+        optionnumber = int(input("Please select a path: "))
+        if optionnumber < 1 or optionnumber > max_option: # If the option selected is outside of bounds, loop again and display error
+            print("Invalid Option!")
+        
+    return optionnumber
+
     
 ##############
 # Test Suite #
