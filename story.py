@@ -1,14 +1,16 @@
 import json
 from cfonts import render
+from rich.console import Console
 
 passages = {}
 readerpath = []
+console = Console()
 
 try:
     with open('passages.json') as p: # Loads the passages file into dictonary object.
         passages = json.load(p)
 except FileNotFoundError:
-    print("Could not find the passages file.  Please make sure it exists!")
+    console.print("Could not find the passages file.  Please make sure it exists!", style="bold red")
     exit(0)
     
 def serialize(path):
@@ -26,7 +28,7 @@ def writeStory(fileText, filePath):
         with open(filePath, 'w') as p:
             p.write(fileText)
     except IOError:
-        print("There was a problem writing the file.")        
+        console.print("There was a problem writing the file.", style="bold red")        
         
 def main():
     messageoutput = render('Create A Story!', colors=['red', 'yellow'], align='center')
@@ -49,7 +51,7 @@ def do_story(current_passage):
 
 def print_passage(passage):
     # Prints the given passage
-    print(passage)
+    console.print(passage, style="blue")
     print()
     
 def get_option(options):
@@ -60,7 +62,7 @@ def get_option(options):
     optionsavail = []
     for option in options: # Enumerate and print each option
         i = i + 1
-        print(f"{i}: {options[option]}")
+        console.print(f"{i}: {options[option]}", style="bold blue")
         optionsavail.append(option)
     
     optionnumber = get_option_number(len(optionsavail))
