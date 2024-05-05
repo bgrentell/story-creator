@@ -36,6 +36,19 @@ This  app should load a story book from a text based file, then allow the user t
    - The story is then serialized by traversing the user's path through the story, combined with the passages dictionary,
    - The next thing to be implemented will be to save the whole story to a text file.
 
+---
+
+*Configuration*
+Extract the contents of the zip file into a directory, then run the following command:
+
+`./script.sh install`
+
+To run the software run the following command:
+
+`./script.sh <outputdocumentname>`
+
+If the outputdocumentname is ommitted, by default the document will be saved as story.docx.
+
 *References*
 https://www.cs.cmu.edu/~pattis/15-1XX/15-200/lectures/style/index.html
 
@@ -45,4 +58,6 @@ https://github.com/Textualize/rich
 
 https://medium.com/@HeCanThink/python-docx-a-comprehensive-guide-to-creating-and-manipulating-word-documents-in-python-a765cf4b4cb9#:~:text=docx%20Python%20library&text=It%20allows%20you%20to%20create,introduced%20with%20Microsoft%20Office%202007.
 
+https://drive.google.com/file/d/1tXYYBnoosbvNDWMawJOniMZxsDA9FeWD/view
 
+https://www.digitalocean.com/community/tutorials/how-to-package-and-distribute-python-applications

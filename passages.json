@@ -1,37 +1,89 @@
 [
     {
         "begin": {
-            "passage": "This is the beginning message",
+            "passage": "Walking down the path, you notice something on the ground!",
             "options": {
-                "first": "Start Story"
+                "get_item": "Pick up the item",
+                "no_item": "Leave the item"
             }
         },
-        "first": {
-            "passage": "This is a passage", 
+        "get_item": {
+            "passage": "With the item in hand, you have no problem passing through the magical barrier.", 
             "options": {
-                "second" : "Go To Next Passage"
+                "overcome_item": "Use item to overcome",
+                "no_overcome": "Unable to overcome"
             }
         },
-        "second": {
-            "passage": "This is the next passage",
+        "no_item": {
+            "passage": "Choosing not to take the item, you are stuck when a magic barrier blocks your path.",
             "options": {
-                "first": "Go To First Passage",
-                "fourth": "Go To Fourth Passage",
-                "third": "Go To Next Passage"
+                "overcome_no_item": "Use wits to overcome",
+                "no_overcome": "Unable to overcome"
             }
         },
-        "third": {
-            "passage": "This is the third passage",
+        "overcome_no_item": {
+            "passage": "Using nothing but your wits you pass through the barrier.  You see someone in the path before you.",
             "options": {
-                "second": "Go To Second Passage",
-                "first": "Go To First Passage"
+                "no_meet": "Avoid the person",
+                "greet_no_item": "Greet the person"
             }
         },
-        "fourth": {
-            "passage": "This is the fourth passage",
+        "no_overcome": {
+            "passage": "Unable to pass through the barrier, you find your journey meeting an early end",
             "options": {
-                "second": "Go To Second Passage",
-                "end": "Ends the story"
+                "end": "The End"
+            }
+        },
+        "overcome_item": {
+            "passage": "On the path before you, you see someone.",
+            "options": {
+                "no_meet": "Avoid the person",
+                "meet_item": "Approach the person"
+            }
+        },
+        "greet_no_item": {
+            "passage": "Greeting the man you listen to his words of wisdom.  Soon you find yourself at your destination.",
+            "options": {
+                "no_item_end": "Without the item you are lost",
+                "wise_enter": "Remembering the wise words you enter"
+            }
+        },
+        "no_meet": {
+            "passage": "Ignoring the person, you press on towards your destination.",
+            "options": {
+                "no_item_end": "Try to get in",
+                "no_try": "Don't try to enter"
+            }
+        },
+        "meet_item": {
+            "passage": "Greeting the character, you show him your item.  He explains its use to you.  Soon you reach your destination.",
+            "options": {
+                "no_try": "Don't try to enter",
+                "item_enter": "Use the item to get in"
+            }
+        },
+        "wise_enter": {
+            "passage": "Finally your journey is at an end, as all is revealed.",
+            "options": {
+                "end": "Live Happily Ever After"
+            }
+        },
+        "no_item_end": {
+            "passage": "Despite everything, you cannot enter.  You came so far for nothing.",
+            "options": {
+                "end": "The End"
+            }
+        },
+        "no_try": {
+            "passage": "Though you travelled far, you know the destination isn't as important as the journey.  Sitting down, you don't enter.",
+            "options": {
+                "end": "The End"
+            }
+        },
+        "item_enter": {
+            "passage": "Using the item, and the wise words of the stranger, you enter your final destination where you can live.",
+            "options": {
+                "end": "Live Happily Ever After"
             }
         }
     }

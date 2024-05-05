@@ -1,4 +1,5 @@
 import json
+from sys import argv
 from cfonts import render
 from rich.console import Console
 from docx import Document
@@ -30,7 +31,11 @@ def serialize(path):
 
 def writeStory(fileText, filePath):
     try:
-        doc.save("story.docx")
+        if len(argv) > 1:
+            doc.save(f"{argv[1]}.docx")
+        else:
+            doc.save("story.docx")
+            
     except IOError:
         console.print("There was a problem writing the file.", style="bold red")        
         
