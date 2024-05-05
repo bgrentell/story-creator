@@ -1,6 +1,7 @@
 import json
 
 passages = {}
+readerpath = []
 
 try:
     with open('passages.json') as p: # Loads the passages file into dictonary object.
@@ -35,6 +36,7 @@ def main():
 def do_story(current_passage):
     # Gets the passage from the global passages list, displays the passage, then returns the next selected passage from the user.
     passage = passages[0][current_passage]
+    readerpath.append(current_passage)
     print_passage(passage["passage"])
     return get_option(passage["options"])
 
