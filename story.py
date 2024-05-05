@@ -1,4 +1,5 @@
 import json
+from cfonts import render
 
 passages = {}
 readerpath = []
@@ -28,6 +29,10 @@ def writeStory(fileText, filePath):
         print("There was a problem writing the file.")        
         
 def main():
+    messageoutput = render('Create A Story!', colors=['red', 'yellow'], align='center')
+    print(messageoutput)
+    print()
+    
     # Loops through story until an end result is reached.
     current_passage = "begin" # The tag for the beginning passage
     while current_passage != "end": # The tag for the end of story

@@ -38,3 +38,5 @@ This  app should load a story book from a text based file, then allow the user t
 
 *References*
 https://www.cs.cmu.edu/~pattis/15-1XX/15-200/lectures/style/index.html
+
+https://pypi.org/project/python-cfonts/
