@@ -32,6 +32,8 @@ def main():
     current_passage = "begin" # The tag for the beginning passage
     while current_passage != "end": # The tag for the end of story
         current_passage = do_story(current_passage)
+        
+    writeStory(serialize(readerpath), "story.txt")
     
 def do_story(current_passage):
     # Gets the passage from the global passages list, displays the passage, then returns the next selected passage from the user.
