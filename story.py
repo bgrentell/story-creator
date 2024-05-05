@@ -1,10 +1,15 @@
 import json
 from cfonts import render
 from rich.console import Console
+from docx import Document
+from docx.shared import Pt
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 passages = {}
 readerpath = []
 console = Console()
+
+doc = Document() # Creates a new word document.
 
 try:
     with open('passages.json') as p: # Loads the passages file into dictonary object.
@@ -25,8 +30,7 @@ def serialize(path):
 
 def writeStory(fileText, filePath):
     try:
-        with open(filePath, 'w') as p:
-            p.write(fileText)
+        doc.save("story.docx")
     except IOError:
         console.print("There was a problem writing the file.", style="bold red")        
         
@@ -34,6 +38,9 @@ def main():
     messageoutput = render('Create A Story!', colors=['red', 'yellow'], align='center')
     print(messageoutput)
     print()
+    
+    title = doc.add_heading('Create A Story!', level=1) # Creates a heading in the word document
+    title.alignment = WD_ALIGN_PARAGRAPH.CENTER
     
     # Loops through story until an end result is reached.
     current_passage = "begin" # The tag for the beginning passage
@@ -47,6 +54,7 @@ def do_story(current_passage):
     passage = passages[0][current_passage]
     readerpath.append(current_passage)
     print_passage(passage["passage"])
+    doc.add_paragraph(passage["passage"])
     return get_option(passage["options"])
 
 def print_passage(passage):

@@ -43,3 +43,6 @@ https://pypi.org/project/python-cfonts/
 
 https://github.com/Textualize/rich
 
+https://medium.com/@HeCanThink/python-docx-a-comprehensive-guide-to-creating-and-manipulating-word-documents-in-python-a765cf4b4cb9#:~:text=docx%20Python%20library&text=It%20allows%20you%20to%20create,introduced%20with%20Microsoft%20Office%202007.
+
+
