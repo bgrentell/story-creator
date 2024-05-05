@@ -1,0 +1,38 @@
+[
+    {
+        "begin": {
+            "passage": "This is the beginning message",
+            "options": {
+                "first": "Start Story"
+            }
+        },
+        "first": {
+            "passage": "This is a passage", 
+            "options": {
+                "second" : "Go To Next Passage"
+            }
+        },
+        "second": {
+            "passage": "This is the next passage",
+            "options": {
+                "first": "Go To First Passage",
+                "fourth": "Go To Fourth Passage",
+                "third": "Go To Next Passage"
+            }
+        },
+        "third": {
+            "passage": "This is the third passage",
+            "options": {
+                "second": "Go To Second Passage",
+                "first": "Go To First Passage"
+            }
+        },
+        "fourth": {
+            "passage": "This is the fourth passage",
+            "options": {
+                "second": "Go To Second Passage",
+                "end": "Ends the story"
+            }
+        }
+    }
+]
