@@ -16,6 +16,13 @@ def serialize(path):
         
         fileText += "\n\n" + passages[0][option]["passage"]
     
-    print(fileText)
+    return fileText
 
-serialize(test_path)
+def writeStory(fileText, filePath):
+    with open(filePath, 'w') as p:
+        p.write(fileText)
+        
+
+
+text = serialize(test_path)
+writeStory(text, "teststory.txt")
